@@ -1,0 +1,65 @@
+version: "3.9"
+
+networks:
+  attack:
+    name: attack
+
+services:
+  server:
+    build: './server'
+    working_dir: /scripts
+    volumes:
+      - './server:/scripts'
+    networks: 
+      - attack
+
+  attacker:
+    build: ./attacker
+    working_dir: /scripts
+    volumes:
+      - './attacker:/scripts'
+    networks:
+      - attack
+    environment:
+      SCRIPT_PATH: ${SCRIPT_PATH}
+  
+  attacker2:
+    build: ./attacker
+    working_dir: /scripts
+    volumes:
+      - './attacker:/scripts'
+    networks:
+      - attack
+    environment:
+      SCRIPT_PATH: ${SCRIPT_PATH}
+
+  attacker3:
+    build: ./attacker
+    working_dir: /scripts
+    volumes:
+      - './attacker:/scripts'
+    networks:
+      - attack
+    environment:
+      SCRIPT_PATH: ${SCRIPT_PATH}
+
+  attacker4:
+    build: ./attacker
+    working_dir: /scripts
+    volumes:
+      - './attacker:/scripts'
+    networks:
+      - attack
+    environment:
+      SCRIPT_PATH: ${SCRIPT_PATH}
+
+  attacker5:
+    build: ./attacker
+    working_dir: /scripts
+    volumes:
+      - './attacker:/scripts'
+    networks:
+      - attack
+    environment:
+      SCRIPT_PATH: ${SCRIPT_PATH}
+
