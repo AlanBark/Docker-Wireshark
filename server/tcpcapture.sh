@@ -1,1 +1,1 @@
-tcpdump -c 100000 -w ./$(date +%s)-captured_packets.pcap
+timeout 3 tcpdump -c 10000 -w ./$(date +%s)-captured_packets.pcap
